@@ -3,10 +3,8 @@
  * @return {number[]}
  */
 var runningSum = function(nums) {
-    for (i = 0; i < nums.length; i++) {
-        if (i >= 1) {
-            nums[i] = nums[i] + nums[i-1]
-        }
+    for (i = 1; i < nums.length; i++) {
+            nums[i] += nums[i-1]
     }
     return nums
 };
