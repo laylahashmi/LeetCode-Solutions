@@ -3,9 +3,10 @@
  * @return {number[]}
  */
 var runningSum = function(nums) {
-  const values = []
-  nums.forEach((value, index) => {
-      values[index] = index === 0 ? nums[index] : values[index - 1] + value
-  })
-  return values
+    for (i = 0; i < nums.length; i++) {
+        if (i >= 1) {
+            nums[i] = nums[i] + nums[i-1]
+        }
+    }
+    return nums
 };
