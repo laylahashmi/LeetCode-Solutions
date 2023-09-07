@@ -3,20 +3,17 @@
  * @return {number}
  */
 var majorityElement = function(nums) {
-    let count = {}
-    nums.forEach(number => {
-        if (!count[number]) {
-            count[number] = 1
+    result = 0;
+    count = 0;
+    nums.forEach(num => {
+        if (count === 0) {
+            result = num
+        };
+        if (result !== num) {
+            count--
         } else {
-            count[number]++
-        }
+            count++
+        };
     })
-    let highestValue = 0
-    for (let key in count) {
-        value = count[key]
-        if (value > highestValue) {
-            highestValue = value
-            highestValueKey = key
-        }
-    } return highestValueKey
+    return result;
 };
