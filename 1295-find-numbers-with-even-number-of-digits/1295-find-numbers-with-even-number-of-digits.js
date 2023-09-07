@@ -3,10 +3,11 @@
  * @return {number}
  */
 var findNumbers = function(nums) {
-    let evenNumbers=0
-    for (let i=0; i<nums.length; i++) {
-        if (nums[i].toString().split("").length%2==0) {
-            evenNumbers++
+    let result = 0
+    nums.forEach(el => {
+        if (el.toString().length%2===0) {
+            result++
         }
-    } return evenNumbers
+    })
+    return result
 };
