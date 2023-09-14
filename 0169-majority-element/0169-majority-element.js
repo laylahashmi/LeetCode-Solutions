@@ -3,17 +3,17 @@
  * @return {number}
  */
 var majorityElement = function(nums) {
-    result = 0;
-    count = 0;
-    nums.forEach(num => {
+    let result = 0;
+    let count = 0;
+    nums.forEach((num) => {
         if (count === 0) {
-            result = num
-        };
+            result = num;
+        } 
         if (result !== num) {
-            count--
+            count --;
         } else {
-            count++
-        };
+            count ++;
+        }
     })
-    return result;
+    return result
 };
