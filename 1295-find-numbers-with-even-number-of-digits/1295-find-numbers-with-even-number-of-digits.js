@@ -3,5 +3,5 @@
  * @return {number}
  */
 var findNumbers = function(nums) {
-    return nums.map((num) => num.toString()).reduce((acc, num) => num.length%2===0 ? acc+=1 : acc, 0)
+    return nums.reduce((acc, num) => num.toString().length%2===0 ? acc+=1 : acc, 0)
 };
