@@ -3,18 +3,5 @@
  * @return {number}
  */
 var findNumbers = function(nums) {
-    let count = 0
-    // nums.forEach(el => {
-    //     if (el.toString().length%2===0) {
-    //         count++
-    //     }
-    // })
-    
-    for (i = 0; i < nums.length; i++) {
-        let numberOfDigits = nums[i].toString().length;
-        if (numberOfDigits%2===0) {
-            count++
-        };
-    };
-    return count
+    return nums.map((num) => num.toString()).reduce((acc, num) => num.length%2===0 ? acc+=1 : acc, 0)
 };
