@@ -11,11 +11,10 @@ class Solution:
         
         countS, countT = {}, {}
         
-        if len(s) == len(t):
-            for i in range(len(s)):
-                countS[s[i]] = countS.get(s[i], 0) + 1
-                countT[t[i]] = countT.get(t[i], 0) + 1
-                
-            return countS == countT
-        
-        return False
+        for i in range(len(s)):
+            countS[s[i]] = countS.get(s[i], 0) + 1
+            
+        for i in range(len(t)):     
+            countT[t[i]] = countT.get(t[i], 0) + 1
+
+        return countS == countT
