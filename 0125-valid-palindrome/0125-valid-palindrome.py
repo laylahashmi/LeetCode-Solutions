@@ -6,5 +6,5 @@ class Solution:
         3. reverse string
         4. compare the clean string and the reversed string
         """
-        cleanStr = re.sub("[^a-zA-Z0-9]", "", s).lower()
+        cleanStr = [i for i in s.lower() if i.isalnum()]
         return cleanStr == cleanStr[::-1]
