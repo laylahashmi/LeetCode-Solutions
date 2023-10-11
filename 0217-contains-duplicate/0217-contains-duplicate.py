@@ -1,19 +1,19 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         """
-        1. make an empty dict
-        2. loop through my numbers array
-            1. number is in the dict, return true
-            2. number is not in the dict, add it to the dict with a vaue of 1
-        3. no duplicates, answer will be false
+        1. create an empty set
+        2. loop through my numbers
+        3. check if number is in the set
+            - if not, add it
+            - if it is, return true
+        4. loop completes, return false
         """
         
-        res = set()
+        s = set()
         
-        for i in range(len(nums)):
-            if nums[i] in res:
+        for n in nums:
+            if n in s:
                 return True
-            res.add(nums[i])
+            s.add(n)
         return False
-        
         
