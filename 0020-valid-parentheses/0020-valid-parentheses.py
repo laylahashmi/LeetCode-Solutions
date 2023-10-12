@@ -24,4 +24,4 @@ class Solution:
             else:
                 stack.append(char) #opening bracket
                 
-        return True if len(stack) == 0 else False
+        return True if not stack else False
