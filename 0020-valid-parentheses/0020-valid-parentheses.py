@@ -1,27 +1,27 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        """
+        '''
         1. create an empty stack
-        2. create a dict relating our closing brackets to the opening brackets
-        3. loop through our string
-            - determine if the char is an opening or closing bracket
-            - if the char is closing, check to see if the last item added to our stack is the matching open bracket
-                - if it is, remove the matching char
-                - if not, return False - that means the string is not valid
-            - if the char is opening, we will add it to our stack
-        4. if the stack is empty, we will return True otherwise return False
-        """
+        2. create an object relating opening and closing brackets
+        3. check and see if the char in s is in closing brackets
+            - if it is, this means its a closing bracket
+                -check if the last item in the stack is the open bracket for the closed one
+                    - if it is, then remove the open bracket from the stack
+                    - if not, then return False bc the string is not valid
+            - if not, then it is an opening bracket and we need to add it to our stack
+        4. if the stack is empty, return True, if its not empty return False
+        '''
         
         stack = []
-        closeToOpen = {"}" : "{", "]" : "[", ")" : "("}
+        closeToOpen = {")" : "(", "]" : "[", "}" : "{"}
         
         for char in s:
-            if char in closeToOpen: #closing bracket
+            if char in closeToOpen:
                 if stack and stack[-1] == closeToOpen[char]:
                     stack.pop()
                 else:
                     return False
             else:
-                stack.append(char) #opening bracket
-                
+                stack.append(char)
+        
         return True if not stack else False
