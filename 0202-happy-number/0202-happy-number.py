@@ -1,12 +1,11 @@
 class Solution:
     def isHappy(self, n: int) -> bool:
-        sums = []
+        sums = set()
         while n != 1:
-            digits = [int(d)**2 for d in str(n)]
-            n = sum(digits)
+            n = sum([int(d)**2 for d in str(n)])
             if n in sums:
                 return False
-            sums.append(n)
+            sums.add(n)
         return True
     
 
